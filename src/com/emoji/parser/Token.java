@@ -1,5 +1,7 @@
 package com.emoji.parser;
 
+import javax.swing.*;
+
 public class Token {
 
     private final String symbol;
@@ -12,7 +14,7 @@ public class Token {
         return emojiRepository.hasEmoji(symbol);
     }
 
-    public String getEmojiImage(EmojiRepository emojiRepository) {
+    public ImageIcon getEmojiImage(EmojiRepository emojiRepository) {
         return emojiRepository.getEmoji(symbol);
     }
 

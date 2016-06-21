@@ -1,5 +1,6 @@
 package com.emoji.parser;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,6 +16,12 @@ public class Main {
             for (Token token : tokens) {
                 if (token.isEmoji(emojiRepository)) {
                     System.out.println(String.format("We have an emoji here ==> %s - %s", token.getSymbol(), token.getEmojiImage(emojiRepository)));
+                    final ImageIcon emoji = token.getEmojiImage(emojiRepository);
+                    JOptionPane.showMessageDialog(
+                            null,
+                            String.format("Emoji from %s", token.getSymbol()),
+                            "My emoji!", JOptionPane.INFORMATION_MESSAGE,
+                            emoji);
                 } else {
                     System.out.println(String.format("This token isn't an emoji ==> %s", token.getSymbol()));
                 }
